@@ -1,0 +1,159 @@
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+
+public class Control {
+    Main object;
+
+    public void setObject(Main object) {
+        this.object = object;
+    }
+
+    @FXML
+    private ChoiceBox<String> mainChoiceBox;  // First ChoiceBox
+    @FXML
+    private ChoiceBox<String> secondaryChoiceBox;  // Second ChoiceBox
+    @FXML
+    private Label EnterBox; // Reference to the Label in FXML
+
+    // Method to dynamically set the text of the label
+    public void setLabelText(String text) {
+        if (EnterBox != null) {
+            EnterBox.setText(text);  // Dynamically set the text of the label
+        }
+    }
+
+    // Method to handle button press (for loading a new window)
+    public void ButtonPressed(ActionEvent actionEvent) {
+
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("choice.fxml"));
+            Scene scene=new Scene(loader.load(),600,640);
+            object.nextScence(scene);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Method to handle choice selection from the first ChoiceBox
+    public void handleChoiceSelection(ActionEvent event) {
+        // Get the selected option from the first ChoiceBox
+        String selectedOption = mainChoiceBox.getSelectionModel().getSelectedItem();
+
+        if (selectedOption != null) {
+            // Disable the main ChoiceBox for "Search Players" and "Search Clubs"
+            if (selectedOption.equals("Search Players") || selectedOption.equals("Search Clubs")) {
+                mainChoiceBox.setDisable(true);
+            }
+
+            // Dynamically update the second ChoiceBox based on the selection
+            if (selectedOption.equals("Search Players")) {
+                // Update second ChoiceBox options for "Search Players"
+                secondaryChoiceBox.setItems(FXCollections.observableArrayList(
+                        "By Player Name",
+                        "By Club and Country",
+                        "By Position",
+                        "By Salary Range",
+                        "Country-wise player count",
+                        "Back to Main Menu"
+                ));
+                System.out.println("Search Players selected");
+
+                // Set label based on second ChoiceBox selection
+                secondaryChoiceBox.setOnAction(e -> {
+                    String secondOption = secondaryChoiceBox.getSelectionModel().getSelectedItem();
+                    if (secondOption != null) {
+                        if (secondOption.equals("By Player Name")) {
+                            setLabelText("Search by Player Name");
+                        } else if (secondOption.equals("By Club and Country")) {
+                            setLabelText("Search by Club and Country");
+                        } else if (secondOption.equals("By Position")) {
+                            setLabelText("Search by Position");
+                        } else if (secondOption.equals("By Salary Range")) {
+                            setLabelText("Search by Salary Range");
+                        } else if (secondOption.equals("Country-wise player count")) {
+                            setLabelText("Display Country-wise Player Count");
+                        } else if (secondOption.equals("Back to Main Menu")) {
+                            setLabelText("Going Back to Main Menu");
+                            // Reset to the initial state
+                            resetToInitialState();
+                        }
+                    }
+                });
+
+            } else if (selectedOption.equals("Search Clubs")) {
+                // Update second ChoiceBox options for "Search Clubs"
+                secondaryChoiceBox.setItems(FXCollections.observableArrayList(
+                        "Player(s) with the maximum salary of a club",
+                        "Player(s) with the maximum age of a club",
+                        "Player(s) with the maximum height of a club",
+                        "Total yearly salary of a club",
+                        "Back to Main Menu"
+                ));
+                System.out.println("Search Clubs selected");
+
+                // Set label based on second ChoiceBox selection
+                secondaryChoiceBox.setOnAction(e -> {
+                    String secondOption = secondaryChoiceBox.getSelectionModel().getSelectedItem();
+                    if (secondOption != null) {
+                        if (secondOption.equals("Player(s) with the maximum salary of a club")) {
+                            setLabelText("Player(s) with the maximum salary of a club");
+                        } else if (secondOption.equals("Player(s) with the maximum age of a club")) {
+                            setLabelText("Player(s) with the maximum age of a club");
+                        } else if (secondOption.equals("Player(s) with the maximum height of a club")) {
+                            setLabelText("Player(s) with the maximum height of a club");
+                        } else if (secondOption.equals("Total yearly salary of a club")) {
+                            setLabelText("Total yearly salary of a club");
+                        } else if (secondOption.equals("Back to Main Menu")) {
+                            setLabelText("Going Back to Main Menu");
+                            // Reset to the initial state
+                            resetToInitialState();
+                        }
+                    }
+                });
+
+            } else if (selectedOption.equals("Add Player")) {
+                // Set label for "Add Player"
+                setLabelText("Add a New Player");
+
+                // Clear the second ChoiceBox as there are no options for "Add Player"
+                secondaryChoiceBox.setItems(FXCollections.observableArrayList());
+                System.out.println("Add Player selected");
+
+            } else if (selectedOption.equals("Exit System")) {
+                // Handle logic for "Exit System"
+                System.out.println("Exit System selected");
+                Platform.exit();  // Exit the system
+
+            } else {
+                // Handle case where no valid selection is made
+                secondaryChoiceBox.setItems(FXCollections.observableArrayList());
+                System.out.println("Invalid selection");
+            }
+        }
+    }
+
+    // Method to reset the UI to its initial state
+    private void resetToInitialState() {
+        // Enable the main ChoiceBox
+        mainChoiceBox.setDisable(false);
+
+        // Clear the main and secondary ChoiceBox selections
+        mainChoiceBox.getSelectionModel().clearSelection();
+        secondaryChoiceBox.setItems(FXCollections.observableArrayList());
+        setLabelText("Choose an option from the main menu");
+    }
+
+    public void SearchFx(ActionEvent actionEvent) {
+    }
+}
