@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control">
+    <children>
+        <AnchorPane prefHeight="640.0" prefWidth="600.0">
+            <children>
+                <!-- First Label -->
+                <Label layoutX="17.0" layoutY="14.0" text="Choose an Option" />
+
+                <!-- First ChoiceBox -->
+                <ChoiceBox fx:id="mainChoiceBox" layoutX="14.0" layoutY="32.0" onAction="#handleChoiceSelection" prefWidth="200.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Search Players" />
+                            <String fx:value="Search Clubs" />
+                            <String fx:value="Add Player" />
+                            <String fx:value="Exit System" />
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+
+                <!-- Second Label -->
+                <Label layoutX="17.0" layoutY="76.0" text="Select Specific Option" />
+
+                <ChoiceBox fx:id="secondaryChoiceBox" layoutX="14.0" layoutY="94.0" prefHeight="26.0" prefWidth="276.0">
+                    <!-- Items will be set dynamically from the controller -->
+                </ChoiceBox>
+            <Label fx:id="EnterBox" layoutX="17.0" layoutY="144.0" prefHeight="6.0" prefWidth="534.0" text="                ">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="src" layoutX="14.0" layoutY="193.0" onAction="#SearchFx" />
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
