@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="506.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BuyController">
+    <children>
+        <TableView fx:id="playersTable" layoutX="10.0" layoutY="10.0" prefHeight="450.0" prefWidth="1010.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="countryColumn" prefWidth="150.0" text="Country">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="country" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="ageColumn" prefWidth="75.0" text="Age">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="age" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="heightColumn" prefWidth="100.0" text="Height">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="height" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="clubColumn" prefWidth="200.0" text="Club">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="club" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="positionColumn" prefWidth="125.0" text="Position">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="position" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="numberColumn" prefWidth="100.0" text="Jersey Number">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="number" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="salaryColumn" prefWidth="100.0" text="Salary">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="salary" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button fx:id="buyButton" layoutX="400.0" layoutY="470.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="155.0" text="Buy" />
+    </children>
+</AnchorPane>

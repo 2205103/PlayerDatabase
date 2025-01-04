@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="506.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClubWiseSalaryController">
+    <children>
+        <TableView fx:id="salaryTable" layoutX="5.0" layoutY="20.0" prefHeight="494.0" prefWidth="927.0">
+            <columns>
+                <TableColumn fx:id="clubColumn" prefWidth="450.0" text="Club" />
+                <TableColumn fx:id="yearlySalaryColumn" prefWidth="450.0" text="Yearly Salary" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

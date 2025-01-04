@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="CENTER" hgap="20" style="-fx-background-color: #F0F8FF; -fx-padding: 20;" vgap="15" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Output">
+
+    <!-- Title Section -->
+    <HBox alignment="CENTER" spacing="10" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+
+    <!-- Player Name -->
+    <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Player Name:" GridPane.rowIndex="2" />
+    <Label fx:id="playerNameLabel" style="-fx-font-size: 16px;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <!-- Player Position -->
+    <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Position:" GridPane.rowIndex="3" />
+    <Label fx:id="positionLabel" style="-fx-font-size: 16px;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <!-- Player Age -->
+    <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Age:" GridPane.rowIndex="4" />
+    <Label fx:id="ageLabel" style="-fx-font-size: 16px;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <!-- Player Salary -->
+    <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Salary:" GridPane.rowIndex="5" />
+    <Label fx:id="salaryLabel" style="-fx-font-size: 16px;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+    <!-- Player Country -->
+    <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Country:" GridPane.rowIndex="6" />
+    <Label fx:id="countryLabel" style="-fx-font-size: 16px;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+    <!-- Player Height -->
+    <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Height:" GridPane.rowIndex="7" />
+    <Label fx:id="heightLabel" style="-fx-font-size: 16px;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+    <!-- Player Weight -->
+    <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Weight:" GridPane.rowIndex="8" />
+    <Label fx:id="weightLabel" style="-fx-font-size: 16px;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+    <!-- Back Button -->
+    <HBox alignment="CENTER" spacing="20" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+     <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2E8B57;" text="Player Details" />
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+
+</GridPane>

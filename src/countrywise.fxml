@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="506.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CountryWisePlayerController">
+    <children>
+        <TableView fx:id="countryTable" layoutX="5.0" layoutY="20.0" prefHeight="494.0" prefWidth="927.0">
+            <columns>
+                <TableColumn fx:id="countryColumn" prefWidth="450.0" text="Country" />
+                <TableColumn fx:id="playerCountColumn" prefWidth="450.0" text="Player Count" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

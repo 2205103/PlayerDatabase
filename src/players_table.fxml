@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="506.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PlayerTableController">
+    <children>
+        <TableView fx:id="playersTable" layoutX="5.0" layoutY="20.0" prefHeight="494.0" prefWidth="927.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="100" text="Name" />
+                <TableColumn fx:id="countryColumn" prefWidth="100.0" text="Country" />
+                <TableColumn fx:id="ageColumn" prefWidth="50.0" text="Age" />
+                <TableColumn fx:id="heightColumn" prefWidth="75" text="Height" />
+                <TableColumn fx:id="clubColumn" prefWidth="329.5999755859375" text="Club" />
+                <TableColumn fx:id="positionColumn" prefWidth="111.19989013671875" text="Position" />
+                <TableColumn fx:id="numberColumn" prefWidth="76.0001220703125" text="Number" />
+                <TableColumn fx:id="salaryColumn" minWidth="0.0" prefWidth="93.59993896484377" text="Salary" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
